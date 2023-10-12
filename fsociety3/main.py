@@ -17,3 +17,11 @@ def run():
         command = ['nmap'] + options + [host]
         result = subprocess.run(command, capture_output=True, text=True)
         print(result.stdout)
+    elif choice == 4:
+        print("1. Bypass 4 digit lockscreen")
+        print("2. Bypass 6 digit lockscreen")
+        choice = int(input("fsociety# "))
+        if choice == 1:
+            android.bypass(4)
+        else:
+            android.bypass(6)

@@ -17,3 +17,5 @@ def run():
         command = ['nmap'] + options + [host]
         result = subprocess.run(command, capture_output=True, text=True)
         print(result.stdout)
+    elif choice == 4:
+        android.for_4()

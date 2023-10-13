@@ -1,7 +1,4 @@
 
-import os
-import subprocess  # Import the subprocess module here
-
 
 def get_nmap_options():
     print("Select an option:")

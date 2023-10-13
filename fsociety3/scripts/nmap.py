@@ -1,3 +1,8 @@
+
+import os
+import subprocess  # Import the subprocess module here
+
+
 def get_nmap_options():
     print("Select an option:")
     print("1. Stealth Scan")
@@ -18,3 +23,4 @@ def get_nmap_options():
 
 def get_host():
     return input("Enter the host: ")
+

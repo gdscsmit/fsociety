@@ -1,5 +1,6 @@
 import os
-from scripts import *
+import subprocess
+from scripts import distro,requirements,nmap,android
 
 def run():
     print("1. Install Dependencies")

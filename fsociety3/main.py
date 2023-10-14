@@ -9,8 +9,8 @@ def run():
     print("1. Install Dependencies")
     print("2. Nmap")
     print("3. SQLMap")
-    print("4. HashBash")
-    print("5. Android tools")
+    print("4. Android tools")
+    print("5. Cesar Cypher")
     print("9. Go Back To Main Menu")
     choice = int(input("fsociety# "))
     if choice == 1:
@@ -45,3 +45,14 @@ def run():
             android.bypass(4)
         else:
             android.bypass(6)
+    elif choice == 5:  
+            text = input("Enter the text: ")
+            s = int(input("Enter the shift value: "))
+            encrypted_text = encrypt(text, s)
+            print("Cipher: " + encrypted_text)    
+    else:
+            print("Invalid choice. Please select a valid option.")
+
+if __name__ == "__run__":
+    run()
+

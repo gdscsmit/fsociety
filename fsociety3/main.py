@@ -53,5 +53,7 @@ def run():
             print("Invalid choice. Please select a valid option.")
 
 if __name__ == "__run__":
-    run()
+    # Make the script run in loop
+    while True:
+        run()
 

@@ -22,7 +22,7 @@ def run():
         command = ['nmap'] + options + [host]
         result = subprocess.run(command, capture_output=True, text=True)
         print(result.stdout)
-    elif choice == 4:
+    elif choice == 3:
         hashbash_path = os.path.join(os.path.dirname(__file__), 'fsociety3', 'scripts')  
         sys.path.append(hashbash_path)
         print("Welcome to the MD5 Hash Generator and Cracker Tool.")
@@ -37,7 +37,7 @@ def run():
             print(f"The cracked password for the hash {md5_hashed_value} is: {cracked_password}.")
         else:
             print("Password not found in the dictionary.")
-    elif choice == 5:
+    elif choice == 4:
         print("1. Bypass 4 digit lockscreen")
         print("2. Bypass 6 digit lockscreen")
         choice = int(input("fsociety# "))

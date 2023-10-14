@@ -29,8 +29,7 @@ def run():
         password = input("Please enter the password to generate the MD5 hash: ")
         md5_hashed_value = generate_md5_hash(password)
         print(f"The MD5 hash of the password '{password}' is: {md5_hashed_value}")
-        with open('fsociety3/assets/passwords.txt') as file:
-            potential_passwords = file.read().splitlines()
+
         cracked_password = crack_md5_hash(md5_hashed_value, potential_passwords)
 
         if cracked_password:

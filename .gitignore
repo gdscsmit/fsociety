@@ -1,1 +1,4 @@
 __pycache__
+
+# Avoid pushing the env directory to git
+env/

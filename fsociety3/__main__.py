@@ -2,6 +2,9 @@ import os
 import subprocess
 import random
 from colorama import init, Fore
+import sys
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 def print_colored_logo():
     init(autoreset=True)
@@ -82,7 +85,7 @@ def main():
         print("This script requires superuser access.")
         print("Restarting the script with sudo...")
 
-        subprocess.call(['sudo', 'python3', __file__])
+        subprocess.call([sys.executable, __file__])
         return
 
     import main as fsociety_main

@@ -1,8 +1,15 @@
 import os
 import subprocess
+import random
+from colorama import init, Fore
+import sys
 
-def main():
-    print("""XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+def print_colored_logo():
+    init(autoreset=True)
+    colors = [Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.BLUE, Fore.MAGENTA, Fore.CYAN]
+    colored_logo = """XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX                                                                          XX
 XX   MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM   XX
@@ -65,13 +72,20 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
    o888o   8""888P' `Y8bod8P' `Y8bod8P' o888o `Y8bod8P'   "888"      d8'
                                                                 .o...P'
                                                                 `XER0'
-"""
-)
+    """
+
+    for line in colored_logo.splitlines():
+        color = random.choice(colors)
+        print(color + line)
+
+def main():
+    print_colored_logo()
+
     if os.geteuid() != 0:
         print("This script requires superuser access.")
         print("Restarting the script with sudo...")
-        
-        subprocess.call(['sudo', 'python3', __file__])
+
+        subprocess.call([sys.executable, __file__])
         return
 
     import main as fsociety_main

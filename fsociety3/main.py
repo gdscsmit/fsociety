@@ -3,7 +3,7 @@ import sys
 import hashlib
 import time
 import subprocess
-from scripts import distro,requirements,nmap,android
+from scripts import distro,requirements,nmap,android,cesar,vigenere
 
 def run():
     print("1. Install Dependencies")
@@ -11,6 +11,7 @@ def run():
     print("3. SQLMap")
     print("4. Android tools")
     print("5. Cesar Cypher")
+    print("6. Vigenere Cypher")
     print("9. Go Back To Main Menu")
     choice = int(input("fsociety# "))
     if choice == 1:
@@ -47,8 +48,17 @@ def run():
     elif choice == 5:  
             text = input("Enter the text: ")
             s = int(input("Enter the shift value: "))
-            encrypted_text = encrypt(text, s)
-            print("Cipher: " + encrypted_text)    
+            encrypted_text = cesar.encrypt(text, s)
+            print("Cipher: " + encrypted_text)
+        
+    elif choice == 6:
+        text = input("Enter the text: ")
+        keywords = input("Enter the keywords: ")
+        key = vigenere.generateKey(text, keywords)
+        print("Key: " + key)
+        cipher_text = vigenere.cipherText(text, key)
+        print("Cipher: " + cipher_text)
+        
     else:
             print("Invalid choice. Please select a valid option.")
 
